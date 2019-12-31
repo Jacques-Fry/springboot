@@ -1,0 +1,30 @@
+server:
+  port: 11103
+  tomcat:
+    uri-encoding: UTF-8
+  compression:
+    enabled: true #G压缩
+    mime-types: application/javascript,application/json,application/xml,text/html,text/xml,text/plain,application/x-css,text/css
+    min-response-size: 1KB #1kb以下忽略
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 500MB
+      max-request-size: 500MB
+  datasource:
+    url: jdbc:mysql://192.168.102.254/common?characterEncoding=utf-8&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jackson:
+    time-zone: GMT+8
+    serialization:
+      write-dates-as-timestamps: true #返回时间戳
+    default-property-inclusion: non_null #null值不返回
+
+
+#自定义设置
+option:
+  filePath: D:/file/ #文件存放地址
+  fileUrl: /file/ #网页url前缀

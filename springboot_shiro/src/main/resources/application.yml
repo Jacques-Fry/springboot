@@ -1,0 +1,33 @@
+server:
+  port: 9002
+spring:
+  banner:
+    charset: UTF-8
+  application:
+    name: shiro
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://192.168.102.254/common?characterEncoding=utf-8
+    driver-class-name: com.mysql.jdbc.Driver
+  jackson:
+    time-zone: GMT+8
+    serialization:
+      write-dates-as-timestamps: true
+    default-property-inclusion: non_null
+  redis:
+    host: localhost
+    database: 0
+    port: 6379
+  transaction:
+    rollback-on-commit-failure: true
+logging:
+  config: classpath:log4j2.yml
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+
+custom:
+  md5Salt: jacques
+  redisExpire: 7200
+
